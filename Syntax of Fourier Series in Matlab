@@ -1,0 +1,7 @@
+syms z n P x
+[initializing the variables] evalin (symengine, 'assume (z, Type :: Integer)');
+[Initializing ‘z’ as an integer variable] a = @ (f, x, z, P) int (f * cos (z * pi * x / P) / P, x, -P, P);
+[Calculating the ‘zth’ Fourier cosine coefficient] b = @ (f, x, z, P) int (f * sin (z * pi * x / P) / P, x, -P, P);
+[Calculating the ‘zth’ Fourier sine coefficient] fs = @ (f, x, n, P) a (f, x, 0, P) / 2 + ...
+symsum (a (f, x, Z, P) * cos (z *pi * x / P) + b (f, x, z, P) * sin (z * pi * x / P), z, 1, n);
+[Formula to calculate the nth partial sum]

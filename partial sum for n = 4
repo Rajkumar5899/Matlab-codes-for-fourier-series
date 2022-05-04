@@ -1,0 +1,5 @@
+ezplot (fs (f, x, 4, 1), -1, 1)
+hold on
+ezplot (f, -1, 1)
+hold off
+title ('Plotting 4th partial sum') 
